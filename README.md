@@ -1,10 +1,10 @@
 ﻿# SoilParamsAPI
 
-REST API that calculates soil hydraulic parameters
+REST API that calculates soil hydraulic parameters.
 
-Uses swagger to show the endpoints
+Uses swagger to show the endpoints.
 
-Example POST input
+Example POST input:
 ```json
 {
   "title": "Titulo",

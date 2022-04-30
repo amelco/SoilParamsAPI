@@ -6,7 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-    <PackageReference Include="SoilParams" Version="1.0.0" />
+    <PackageReference Include="SoilParams" Version="1.0.0" Condition="$([MSBuild]::IsOsPlatform('Windows'))" />
+    <PackageReference Include="SoilParams" Version="1.0.0" Condition="$([MSBuild]::IsOsPlatform('Linux'))" />
   </ItemGroup>
 
 </Project>

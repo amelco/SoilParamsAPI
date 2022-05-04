@@ -22,6 +22,7 @@ RUN dotnet publish -c Release -o /src/publish
 FROM mcr.microsoft.com/dotnet/aspnet:5.0-focal AS runtime
 WORKDIR /app
 COPY --from=publish /src/publish .
+COPY --from=publish /src/publish/runtimes/linux-x64/native/*.so ./
 # ENTRYPOINT ["dotnet", "Colors.API.dll"]
 # heroku uses the following
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet SoilParamsAPI.dll

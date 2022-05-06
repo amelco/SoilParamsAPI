@@ -7,11 +7,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json;
 using SoilParamsAPI.Extensions;
+using Microsoft.Extensions.Logging;
 
 namespace SoilParamsAPI.Services
 {
     public class ParameterService : IParameterService
     {
+        private readonly ILogger<ParameterService> _logger;
+
+        public ParameterService(ILogger<ParameterService> logger)
+        {
+            _logger = logger;
+        }
+
         public Result<OutputModel> CalculateParameters(InputQueryParameters input)
         {
             OutputModel res;
@@ -21,6 +29,7 @@ namespace SoilParamsAPI.Services
             }
             catch (Exception e)
             {
+                _logger.LogInformation("Error: " + e.StackTrace);
                 return new Result<OutputModel> { Success = false, Message = e.Message, Data = null };
             }
             return new Result<OutputModel> { Data = res };

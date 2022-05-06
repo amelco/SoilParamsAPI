@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-    <PackageReference Include="SoilParams" Version="1.0.0" Condition="$([MSBuild]::IsOsPlatform('Windows'))" />
-    <PackageReference Include="SoilParams" Version="1.0.1" Condition="$([MSBuild]::IsOsPlatform('Linux'))" />
+    <PackageReference Include="SoilParams" Version="1.1.0" Condition="$([MSBuild]::IsOsPlatform('Linux'))" />
+    <PackageReference Include="SoilParams" Version="1.1.1" Condition="$([MSBuild]::IsOsPlatform('Windows'))" />
   </ItemGroup>
 
 </Project>

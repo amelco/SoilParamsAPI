@@ -17,7 +17,7 @@ namespace SoilParamsAPI.Extensions
                 MeasuredWaterContents = w.MeasuredWaterContents,
                 InitialGuess = w.InitialGuess,
                 Params = w.Params,
-                Stats = new()
+                Stats = new Statistics()
                 {
                     MeasuredStandardDeviation = w.Stats.MeasuredStandardDeviation,
                     MeasuredStandardError = w.Stats.MeasuredStandardError,

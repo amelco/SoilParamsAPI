@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using SoilParamsAPI.Interfaces;
 using SoilParamsAPI.Models;
 using System;
@@ -15,10 +16,12 @@ namespace SoilParamsAPI.Controllers
     public class ParametersController : ControllerBase
     {
         private IParameterService _service { get; set; }
+        private readonly ILogger<ParametersController> _logger;
 
-        public ParametersController(IParameterService service)
+        public ParametersController(IParameterService service, ILogger<ParametersController> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
         /// <summary>

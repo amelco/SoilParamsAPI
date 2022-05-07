@@ -1,4 +1,4 @@
-﻿# SoilParamsAPI
+# SoilParamsAPI
 
 REST API that calculates soil hydraulic parameters.
 
@@ -21,3 +21,11 @@ Example POST input:
   ]
 }
 ```
+
+After deployment (through GitHub Actions), install the following dependency:
+```bash
+apt-get install -y libomp-dev
+```
+
+## To do
+- Deploy using docker container for more flexibility on installing dependencies

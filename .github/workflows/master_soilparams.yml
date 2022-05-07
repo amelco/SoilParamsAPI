@@ -33,6 +33,9 @@ jobs:
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+      
+      - name: Installing shared libraries dependencies
+        run: apt install libomp5
 
   deploy:
     runs-on: ubuntu-latest
